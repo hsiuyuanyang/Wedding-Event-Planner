@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 
 def find_venue_rating(page_bs, new_venue_info_row):
 	try:
-		rating_value = page_bs.find('div', class_ = 'srOnly').get_text()
+		rating_value = page_bs.find('span', class_ = 'srOnly').get_text()
 		rating_value = rating_value.partition(' ')[0]
 		new_venue_info_row.append(float(rating_value))
 	except:
